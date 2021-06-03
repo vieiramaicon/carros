@@ -6,56 +6,12 @@ import '../../entity/usuario.dart';
 import '../../entity/carro.dart';
 import 'text_error.dart';
 
-class CarrosListView extends StatefulWidget {
+class CarrosListView extends StatelessWidget {
   final String tipo;
   const CarrosListView(this.tipo);
 
   @override
-  _CarrosListView createState() => _CarrosListView();
-}
-
-class _CarrosListView extends State<CarrosListView> with AutomaticKeepAliveClientMixin<CarrosListView> {
-  final _bloc = CarrosBloc();
-
-  @override
-  bool get wantKeepAlive => true;
-  
-  @override
-  void initState() {
-    super.initState();
-    _bloc.fetch(widget.tipo);
-  }
-
-  @override 
-  void dispose() {
-    super.dispose();
-    _bloc.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    super.build(context);
-
-    return StreamBuilder<List<Carro>>(
-      stream: _bloc.stream,
-      builder: (context, snapshot) {
-        if (snapshot.hasError) {
-          return TextError('Não foi possível buscar os carros!');
-        }
-
-        if(!snapshot.hasData) {
-          return Center(
-            child: CircularProgressIndicator()
-          );
-        }
-
-        List<Carro> carros = snapshot.data;
-        return _listarCarros(carros);
-      }
-    );
-  }
-
-  Widget _listarCarros(List<Carro> lista) {
     return Container(
       padding: EdgeInsets.all(16),
       child: ListView.builder(
