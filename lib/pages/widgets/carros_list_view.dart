@@ -7,8 +7,8 @@ import '../../entity/carro.dart';
 import 'text_error.dart';
 
 class CarrosListView extends StatelessWidget {
-  final String tipo;
-  const CarrosListView(this.tipo);
+  final lista;
+  const CarrosListView(this.lista);
 
   @override
   Widget build(BuildContext context) {
