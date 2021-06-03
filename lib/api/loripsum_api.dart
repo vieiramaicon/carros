@@ -5,6 +5,7 @@ class LoripsumApi {
   static Future<String> getLoripsum() async {
     var url = Uri.parse('http://loripsum.net/api/10/short/headers');
     var response = await http.get(url);
+    var text = response.body;
 
     text = text.replaceAll('<p>', '');
     text = text.replaceAll('</p>', '');
