@@ -6,9 +6,13 @@ import '../../entity/usuario.dart';
 import '../../entity/carro.dart';
 import 'text_error.dart';
 
-class CarrosListView extends StatelessWidget {
+class CarrosListView extends StatelessWidget with AutomaticKeepAliveClientMixin<CarrosListView>{
   final carros;
-  const CarrosListView(this.carros);
+  
+  CarrosListView(this.carros);
+
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   Widget build(BuildContext context) {
