@@ -53,9 +53,9 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin<Home
             : TabBarView(
                 controller: _tabController, 
                 children: [
-                    CarrosPage(TipoCarro.classicos),
-                    CarrosPage(TipoCarro.esportivos),
-                    CarrosPage(TipoCarro.luxo),
+                    CarrosView(TipoCarro.classicos),
+                    CarrosView(TipoCarro.esportivos),
+                    CarrosView(TipoCarro.luxo),
                 ]
             )
     );
