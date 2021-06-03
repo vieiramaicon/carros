@@ -3,10 +3,8 @@ import 'package:http/http.dart' as http;
 
 class LoripsumApi {
   static Future<String> getLoripsum() async {
-    var url = Uri.https('https://loripsum.net', '/api/plaintext', {
-      'q': '{http}'
-    });
-    var response = await http.get(url);
+    var url = Uri.parsse('https://loripsum.net/api/plaintext');
+    var response = await http.read(url);
     var text = response.body;
 
     return text;
