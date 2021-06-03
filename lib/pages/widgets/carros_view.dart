@@ -7,15 +7,15 @@ import '../../entity/carro.dart';
 import 'carros_list_view.dart';
 import 'text_error.dart';
 
-class CarrosPage extends StatefulWidget {
+class CarrosView extends StatefulWidget {
   final String tipo;
-  const CarrosPage(this.tipo);
+  const CarrosView(this.tipo);
 
   @override
-  _CarrosPage createState() => _CarrosPage();
+  _CarrosView createState() => _CarrosView();
 }
 
-class _CarrosPage extends State<CarrosPage> with AutomaticKeepAliveClientMixin<CarrosPage> {
+class _CarrosView extends State<CarrosView> with AutomaticKeepAliveClientMixin<CarrosView> {
   final _bloc = CarrosBloc();
 
   @override
