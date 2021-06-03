@@ -15,7 +15,7 @@ class CarrosPage extends StatefulWidget {
   _CarrosPage createState() => _CarrosPage();
 }
 
-class _CarrosPage extends State<CarrosPage> with AutomaticKeepAliveClientMixin<CarrosListView> {
+class _CarrosPage extends State<CarrosPage> with AutomaticKeepAliveClientMixin<CarrosPage> {
   final _bloc = CarrosBloc();
 
   @override
