@@ -6,7 +6,7 @@ class LoripsumApi {
     var url = Uri.https('https://loripsum.net', '/api/plaintext', {
       'q': '{http}'
     });
-    var response = http.get(url);
+    var response = await http.get(url);
     var text = response.body;
 
     return text;
