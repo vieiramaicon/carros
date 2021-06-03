@@ -3,8 +3,8 @@ import '../api/carros_api.dart';
 import '../entity/usuario.dart';
 import '../entity/carro.dart';
 import '../entity/prefs.dart';
+import 'carros_page';
 import 'widgets/drawer_custom.dart';
-import 'widgets/carros_list_view.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -53,9 +53,9 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin<Home
             : TabBarView(
                 controller: _tabController, 
                 children: [
-                    CarrosListView(TipoCarro.classicos),
-                    CarrosListView(TipoCarro.esportivos),
-                    CarrosListView(TipoCarro.luxo),
+                    CarrosPage(TipoCarro.classicos),
+                    CarrosPage(TipoCarro.esportivos),
+                    CarrosPage(TipoCarro.luxo),
                 ]
             )
     );
