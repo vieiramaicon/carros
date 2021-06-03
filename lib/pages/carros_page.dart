@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import '../../api/carros_api.dart';
-import '../../bloc/carros_bloc.dart';
-import '../../entity/usuario.dart';
-import '../../entity/carro.dart';
+import '../api/carros_api.dart';
+import '../bloc/carros_bloc.dart';
+import '../entity/usuario.dart';
+import '../entity/carro.dart';
 import 'widgets/carros_list_view.dart';
 import 'widgets/text_error.dart';
 
