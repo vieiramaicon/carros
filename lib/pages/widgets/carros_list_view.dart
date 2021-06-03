@@ -7,24 +7,24 @@ import '../../entity/carro.dart';
 import 'text_error.dart';
 
 class CarrosListView extends StatelessWidget {
-  final lista;
-  const CarrosListView(this.lista);
+  final carros;
+  const CarrosListView(this.carros);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(16),
       child: ListView.builder(
-        itemCount: lista.length,
+        itemCount: carros.length,
         itemBuilder: (context, index) {
-          Carro carro = lista[index];
-            return _item(carro);
+          Carro carro = carros[index];
+            return _item(carro, context);
         }
       )
     );
   }
 
-  Widget _item(Carro c) {
+  Widget _item(Carro c, BuildContext context) {
     return Card(
       color: Colors.grey[200],
       child: Container(
@@ -35,7 +35,7 @@ class CarrosListView extends StatelessWidget {
             _imagemCarro(c),
             _nomeCarro(c),
             _dscCarro(),
-            _buttonBar(c),
+            _buttonBar(c, context),
           ]
         )
       )
@@ -54,7 +54,7 @@ class CarrosListView extends StatelessWidget {
     return Text('descrição...');
   }
 
-  Widget _buttonBar(Carro c) {
+  Widget _buttonBar(Carro c, BuildContext context) {
     return ButtonBarTheme(
       data: ButtonBarTheme.of(context),
       child: ButtonBar(
