@@ -5,8 +5,8 @@ class LoripsumApi {
   static Future<String> getLoripsum() async {
     //var url = Uri.parse('https://loripsum.net/api/plaintext');
     var url = Uri.parse('https://example.com/foobar.txt');
-    var response = await http.read(url);
-    //var text = response.body;
+    var response = await http.get(url);
+    var text = response.body;
 
     return response;
   }
