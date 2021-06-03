@@ -6,7 +6,7 @@ import '../../entity/usuario.dart';
 import '../../entity/carro.dart';
 import 'text_error.dart';
 
-class CarrosListView extends StatelessWidget with AutomaticKeepAliveClientMixin<CarrosListView>{
+class CarrosListView extends StatelessWidget {
   final carros;
   
   CarrosListView(this.carros);
