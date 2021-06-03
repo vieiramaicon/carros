@@ -3,7 +3,7 @@ import '../api/carros_api.dart';
 import '../entity/usuario.dart';
 import '../entity/carro.dart';
 import '../entity/prefs.dart';
-import 'widget/carros_view.dart';
+import 'widgets/carros_view.dart';
 import 'widgets/drawer_custom.dart';
 
 class HomePage extends StatefulWidget {
