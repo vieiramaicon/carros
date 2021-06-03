@@ -5,8 +5,8 @@ import '../entity/response_api.dart';
 
 class LoginApi {
   static Future<ResponseAPI<Usuario>> login(String login, String senha) async {
-    try{    
-      var url = 'https://carros-springboot.herokuapp.com/api/v2/login';
+    try {
+      var url = Uri.parse('https://carros-springboot.herokuapp.com/api/v2/login');
 
       Map<String, String> headers = {};
       headers['Content-Type'] = 'application/json';
@@ -15,10 +15,10 @@ class LoginApi {
       mapBody['username'] = login;
       mapBody['password'] = senha;
       String body = jsonEncode(mapBody);
-      
+
       var response = await http.post(url, headers: headers, body: body);
       Map mapResponse = jsonDecode(response.body);
-      
+
       if (response.statusCode == 200) {
         final Usuario user = Usuario.fromJson(mapResponse);
         user.save();
@@ -26,7 +26,7 @@ class LoginApi {
       }
 
       return ResponseAPI.error(mapResponse['error']);
-    } catch(error) {
+    } catch (error) {
       return ResponseAPI.error('Não foi possível fazer login.');
     }
   }

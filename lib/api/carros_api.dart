@@ -17,7 +17,7 @@ class CarrosAPI {
     headers['Content-Type'] = 'application/json';
     headers['Authorization'] = 'Bearer ${user.token}';
 
-    var url = 'https://carros-springboot.herokuapp.com/api/v2/carros/tipo/$tipo';
+    var url = Uri.parse('https://carros-springboot.herokuapp.com/api/v2/carros/tipo/$tipo');
     var response = await http.get(url, headers: headers);
 
     var lista = jsonDecode(response.body);
