@@ -8,6 +8,6 @@ class LoripsumApi {
     var response = await http.get(url);
     var text = response.body;
 
-    return response;
+    return text;
   }
 }
