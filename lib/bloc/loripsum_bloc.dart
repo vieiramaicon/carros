@@ -5,12 +5,8 @@ import 'simple_bloc.dart';
 
 class LoripsumBloc extends SimpleBloc<String> {
   void fetch() async {
-    var url = Uri.parse('https://loripsum.net/api/plaintext');
-    var response = await http.get(url);
-    var text = response.body;
-
     try {
-      //var text = await LoripsumApi.getLoripsum();
+      var text = await LoripsumApi.getLoripsum();
       add(text);
     } catch (e) {
       addError(e);
