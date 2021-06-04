@@ -51,7 +51,7 @@ class _CarrosView extends State<CarrosView> with AutomaticKeepAliveClientMixin<C
         List<Carro> carros = snapshot.data;
         return RefreshIndicator(
           onRefresh: _onRefresh,
-          child: CarrosListView(carros);
+          child: CarrosListView(carros)
         );
       }
     );
