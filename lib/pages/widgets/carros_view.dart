@@ -50,7 +50,6 @@ class _CarrosView extends State<CarrosView> with AutomaticKeepAliveClientMixin<C
 
         List<Carro> carros = snapshot.data;
         return CarrosListView(carros);
-        );
       }
     );
   }
