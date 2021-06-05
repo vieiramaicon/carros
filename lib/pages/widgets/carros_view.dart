@@ -57,7 +57,7 @@ class _CarrosView extends State<CarrosView> with AutomaticKeepAliveClientMixin<C
     );
   }
 
-  Future<List<Carro>> _onRefresh() {
-    return _bloc.fetch(widget.tipo); 
+  Future<Void> _onRefresh() {
+    _bloc.fetch(widget.tipo); 
   }
 }
