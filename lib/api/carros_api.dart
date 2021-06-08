@@ -25,7 +25,7 @@ class CarrosAPI {
     lista = lista.map<Carro>((map) => Carro.fromJson(map)).toList();
     lista = lista.where((carro) => carro.urlFoto != null).toList();
 
-    final dao = CarroDao();
+    final dao = CarroDAO();
 
     return lista;
   }
