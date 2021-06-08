@@ -26,7 +26,7 @@ class CarrosAPI {
     lista = lista.where((carro) => carro.urlFoto != null).toList();
 
     final dao = CarroDAO();
-    lista.forEach((carro)=>dao.save(carro));
+    lista.forEach(dao.save);
 
     return lista;
   }
