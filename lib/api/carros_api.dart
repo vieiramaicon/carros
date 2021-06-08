@@ -2,6 +2,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../entity/carro.dart';
 import '../entity/usuario.dart';
+import '../entity/carro_dao.dart';
 
 class TipoCarro {
   static final String classicos = 'classicos';
@@ -23,6 +24,8 @@ class CarrosAPI {
     var lista = jsonDecode(response.body);
     lista = lista.map<Carro>((map) => Carro.fromJson(map)).toList();
     lista = lista.where((carro) => carro.urlFoto != null).toList();
+
+    final dao = CarroDao();
 
     return lista;
   }
