@@ -7,6 +7,12 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPage extends State<SplashPage> {
   @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 5), () => Navigator.of(context).pushReplacementNamed('/'));
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.blue[200],
