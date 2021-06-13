@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../entity/db_helper.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -9,7 +10,10 @@ class _SplashPage extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 5), () => Navigator.of(context).pushReplacementNamed('/LoginPage'));
+    
+    Future futureDB = DatabaseHelper().db;
+    Future futureTime = Future.delayed(Duration(seconds: 5));
+    Future.wait([futureDB, futureTime]).then( (_) => Navigator.of(context).pushReplacementNamed('/LogiPage'))
   }
 
   @override
