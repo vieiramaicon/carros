@@ -4,8 +4,8 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DatabaseHelper {
-  static final DatabaseHelper _instance = DatabaseHelper.getInstance();
-  DatabaseHelper.getInstance();
+  static final DatabaseHelper _instance = DatabaseHelper._internal();
+  DatabaseHelper._internal();
 
   factory DatabaseHelper() => _instance;
 
