@@ -9,7 +9,7 @@ class _SplashPage extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 5), () => Navigator.of(context).pushReplacementNamed('/'));
+    Future.delayed(Duration(seconds: 5), () => Navigator.of(context).pushReplacementNamed('/LoginPage'));
   }
 
   @override
