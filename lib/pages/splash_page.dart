@@ -11,7 +11,7 @@ class _SplashPage extends State<SplashPage> {
   void initState() {
     super.initState();
     
-    Future futureDB = DatabaseHelper().db;
+    Future<Database> futureDB = DatabaseHelper().db;
     Future futureTime = Future.delayed(Duration(seconds: 3));
     Future.wait([futureDB]).then((values) {
       Navigator.of(context).pushReplacementNamed('/LoginPage');

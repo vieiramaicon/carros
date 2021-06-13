@@ -1,8 +1,7 @@
 import 'dart:async';
-
+import 'package:sqflite/sqflite.dart';
 import 'carro.dart';
 import 'db_helper.dart';
-import 'package:sqflite/sqflite.dart';
 
 // Data Access Object
 class CarroDAO {
