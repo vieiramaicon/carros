@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class SplashPage extends StatefulWidget {
   @override
-  _SplashPage createState() => SplashPage();
+  _SplashPage createState() => _SplashPage();
 }
 
 class _SplashPage extends State<SplashPage> {
@@ -11,7 +11,7 @@ class _SplashPage extends State<SplashPage> {
     return Container(
       color: Colors.blue[200],
       child: Center( 
-        child:CircularProgressIndicator(),
+        child: CircularProgressIndicator(),
       )
     );
   }
