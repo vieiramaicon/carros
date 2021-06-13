@@ -13,7 +13,7 @@ class _SplashPage extends State<SplashPage> {
     
     Future futureDB = DatabaseHelper().db;
     Future futureTime = Future.delayed(Duration(seconds: 5));
-    Future.wait([futureDB, futureTime]).then( (_) => Navigator.of(context).pushReplacementNamed('/LogiPage'))
+    Future.wait([futureDB, futureTime]).then( (_) => Navigator.of(context).pushReplacementNamed('/LoginPage'))
   }
 
   @override
