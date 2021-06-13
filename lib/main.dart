@@ -16,10 +16,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.white,
       ),
-      initialRoute: '/SplashPage',
+      initialRoute: '/',
       routes: {
-        '/': (context) => LoginPage(),
-        '/SplashPage': (context) => SplashPage(),
+        '/': (context) => SplashPage(),
+        '/LoginPage': (context) => LoginPage(),
         '/HomePage': (context) => HomePage(),
         '/CarroPage': (context) => CarroPage(),
       }
