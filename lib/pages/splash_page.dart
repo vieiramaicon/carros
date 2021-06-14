@@ -15,8 +15,8 @@ class _SplashPage extends State<SplashPage> {
     Future futureDB = DatabaseHelper().db;
     Future futureTime = Future.delayed(Duration(seconds: 3));
     Future<Usuario> futureUser = Usuario.get();
-    Future.wait([futureUser]).then((values) {
-      var user = values[0];
+    Future.wait([futureTime, futureUser]).then((values) {
+      var user = values[1];
       if(user != null) {
         Navigator.of(context).pushReplacementNamed('/HomePage');
       } else {
