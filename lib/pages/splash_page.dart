@@ -19,7 +19,7 @@ class _SplashPage extends State<SplashPage> {
     Future<Database> futureDB = CarroDAO().db;
     Future futureTime = Future.delayed(Duration(seconds: 3));
     Future<Usuario> futureUser = Usuario.get();
-    Future.wait([futureTime, futureUser]).then((values) {
+    Future.wait([futureTime, futureUser, futureDB]).then((values) {
       var user = values[1];
       if(user != null) {
         Navigator.of(context).pushReplacementNamed('/HomePage');
