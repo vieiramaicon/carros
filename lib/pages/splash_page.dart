@@ -17,7 +17,7 @@ class _SplashPage extends State<SplashPage> {
     super.initState();
     
     Future<Database> futureDB = CarroDAO().db;
-    Future<void> futureTime = Future.delayed(Duration(seconds: 3));
+    Future futureTime = Future.delayed(Duration(seconds: 3));
     Future<Usuario> futureUser = Usuario.get();
     Future.wait([futureTime, futureUser]).then((values) {
       var user = values[1];
