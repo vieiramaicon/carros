@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 import 'package:sqflite/sqflite.dart';
-import '../entity/db_helper.dart';
+import '../carro.dart';
+import '../db_helper.dart';
 import '../entity/usuario.dart';
 
 class SplashPage extends StatefulWidget {
@@ -13,9 +15,9 @@ class _SplashPage extends State<SplashPage> {
   void initState() {
     super.initState();
     
-    //Future futureDB = DatabaseHelper().db;
-    Future futureTime = Future.delayed(Duration(seconds: 3));
-    Future futureUser = Usuario.get();
+    Future<Database> futureDB = CarroDao().db;
+    Future<void> futureTime = Future.delayed(Duration(seconds: 3));
+    Future<Usuario> futureUser = Usuario.get();
     Future.wait([futureTime, futureUser]).then((values) {
       var user = values[1];
       if(user != null) {
