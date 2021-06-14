@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../entity/db_helper.dart';
+import '../entity/usuario.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -13,8 +14,14 @@ class _SplashPage extends State<SplashPage> {
     
     Future futureDB = DatabaseHelper().db;
     Future futureTime = Future.delayed(Duration(seconds: 3));
-    Future.wait([futureDB]).then((values) {
-      Navigator.of(context).pushReplacementNamed('/LoginPage');
+    Future<Usuario> futureUser = Usuario.get();
+    Future.wait([futureTime]).then((values) {
+      var user = values[0];
+      if(user != null) {
+        Navigator.of(context).pushReplacementNamed('/HomePage');
+      } else {
+        Navigator.of(context).pushReplacementNamed('/LoginPage');
+      }
     });
   }
 

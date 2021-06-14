@@ -22,13 +22,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-
-    Future<Usuario> future = Usuario.get();
-    future.then((user) {
-      if(user != null) {
-        Navigator.of(context).pushReplacementNamed('/HomePage');
-      }  
-    });
   }
 
   @override
