@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sqflite/sqflite.dart';
 import '../entity/db_helper.dart';
 import '../entity/usuario.dart';
 
@@ -12,7 +13,7 @@ class _SplashPage extends State<SplashPage> {
   void initState() {
     super.initState();
     
-    Future futureDB = DatabaseHelper().db;
+    Future<Database> futureDB = DatabaseHelper().db;
     Future futureTime = Future.delayed(Duration(seconds: 3));
     Future<Usuario> futureUser = Usuario.get();
     Future.wait([futureTime, futureUser]).then((values) {
