@@ -13,9 +13,9 @@ class _SplashPage extends State<SplashPage> {
   void initState() {
     super.initState();
     
-    Future<Database> futureDB = DatabaseHelper().db;
+    Future futureDB = DatabaseHelper().db;
     Future futureTime = Future.delayed(Duration(seconds: 3));
-    Future<Usuario> futureUser = Usuario.get();
+    Future futureUser = Usuario.get();
     Future.wait([futureDB, futureTime, futureUser]).then((values) {
       var user = values[2];
       if(user != null) {
