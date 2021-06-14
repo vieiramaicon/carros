@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:sqflite/sqflite.dart';
 import '../carro.dart';
 import '../db_helper.dart';
+import '../carro_dao.dart';
 import '../entity/usuario.dart';
 
 class SplashPage extends StatefulWidget {
