@@ -15,13 +15,17 @@ class _SplashPage extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    
-    //Future<Database> futureDB = DatabaseHelper().db;
+
+    Future<Database> futureDB = DatabaseHelper().db;
     Future futureTime = Future.delayed(Duration(seconds: 3));
     Future<Usuario> futureUser = Usuario.get();
-    Future.wait([futureTime, futureUser]).then((values) {
-      var user = values[1];
-      if(user != null) {
+    Future.wait([
+      futureDB,
+      futureTime,
+      futureUser
+    ]).then((values) {
+      var user = values[2];
+      if (user != null) {
         Navigator.of(context).pushReplacementNamed('/HomePage');
       } else {
         Navigator.of(context).pushReplacementNamed('/LoginPage');
@@ -32,10 +36,10 @@ class _SplashPage extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blue[200],
-      child: Center( 
-        child: CircularProgressIndicator(),
-      )
-    );
+        color: Colors.blue[200],
+        child: Center(
+          child: CircularProgressIndicator(),
+        )
+      );
   }
 }
